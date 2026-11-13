@@ -1,0 +1,15 @@
+Excero
+Copyright 2026 Alessandro Silacci, University of Lausanne
+
+This software was developed as the research platform for the study
+reported in:
+
+  Alessandro Silacci, Mauro Cherubini, Arianna Boldi, Amon Rapp, and
+  Maurizio Caon. 2026. When Workout Buddies Are Virtual: AI Agents and
+  Human Peers in a Longitudinal Physical Activity Study. In Proceedings
+  of the 2026 CHI Conference on Human Factors in Computing Systems
+  (CHI '26), April 13-17, 2026, Barcelona, Spain. ACM, New York, NY,
+  USA, Article 1172, 20 pages. https://doi.org/10.1145/3772318.3790303
+
+If you use this software, or software derived from it, in academic work,
+please cite the paper above. Citation metadata is provided in CITATION.cff.

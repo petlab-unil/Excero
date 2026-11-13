@@ -1,0 +1,33 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'excero' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for excero
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseMessaging'
+  pod 'RxSwift', '6.6.0'
+  pod 'RxCocoa', '6.6.0'
+  pod 'XCGLogger', '~> 7.1.1'
+  pod 'AsyncPlus', '~> 1.1'
+  pod 'lottie-ios'
+  pod 'PLCrashReporter'  
+  target 'ExceroNotificationServiceExtension' do
+    pod 'FirebaseMessaging'
+  end
+  
+  target 'exceroTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'RxBlocking', '6.6.0'
+    pod 'RxTest', '6.6.0'
+  end
+
+  target 'exceroUITests' do
+    # Pods for testing
+  end
+
+end

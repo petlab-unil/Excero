@@ -1,0 +1,83 @@
+# Citation metadata for this repository (Citation File Format).
+# GitHub reads this file and shows a "Cite this repository" button.
+# Because "preferred-citation" is set, that button gives the paper, not the code.
+
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite the paper listed under
+  "preferred-citation".
+type: software
+title: "Excero"
+abstract: >-
+  Research platform used in a six-month randomized controlled trial on
+  physical activity with human peers and AI-driven simulated exercising
+  peers. It consists of an iOS mobile app, a Django backend and Go
+  components.
+# Authors of the software. Add anyone else who wrote code for the platform.
+authors:
+  - family-names: Silacci
+    given-names: Alessandro
+    affiliation: >-
+      Persuasive Technology Lab, University of Lausanne; School of
+      Management of Fribourg, HES-SO University of Applied Sciences and
+      Arts Western Switzerland
+license: Apache-2.0
+# Uncomment and fill in once the repository is public:
+# repository-code: "https://github.com/<owner>/<repo>"
+keywords:
+  - physical activity
+  - conversational agents
+  - simulated exercising peers
+  - research software
+
+preferred-citation:
+  type: conference-paper
+  title: >-
+    When Workout Buddies Are Virtual: AI Agents and Human Peers in a
+    Longitudinal Physical Activity Study
+  authors:
+    - family-names: Silacci
+      given-names: Alessandro
+      affiliation: >-
+        Persuasive Technology Lab, University of Lausanne; School of
+        Management of Fribourg, HES-SO University of Applied Sciences and
+        Arts Western Switzerland
+    - family-names: Cherubini
+      given-names: Mauro
+      affiliation: "Persuasive Technology Lab, University of Lausanne"
+    - family-names: Boldi
+      given-names: Arianna
+      affiliation: "Department of Psychology, University of Turin"
+    - family-names: Rapp
+      given-names: Amon
+      affiliation: "Computer Science Department, University of Turin"
+    - family-names: Caon
+      given-names: Maurizio
+      affiliation: >-
+        School of Management of Fribourg, HES-SO University of Applied
+        Sciences and Arts Western Switzerland
+  collection-title: >-
+    Proceedings of the 2026 CHI Conference on Human Factors in Computing
+    Systems
+  collection-type: proceedings
+  conference:
+    name: "CHI '26: CHI Conference on Human Factors in Computing Systems"
+    city: Barcelona
+    country: ES
+    date-start: "2026-04-13"
+    date-end: "2026-04-17"
+  publisher:
+    name: "Association for Computing Machinery"
+    city: "New York"
+    region: NY
+    country: US
+  year: 2026
+  month: 4
+  date-published: "2026-04-13"
+  start: 1
+  end: 20
+  pages: 20
+  notes: "Article No. 1172"
+  doi: "10.1145/3772318.3790303"
+  isbn: "979-8-4007-2278-3"
+  url: "https://doi.org/10.1145/3772318.3790303"

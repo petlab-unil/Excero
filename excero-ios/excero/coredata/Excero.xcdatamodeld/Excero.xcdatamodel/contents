@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="22G313" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Avatar" representedClassName=".Avatar" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="isSelf" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="tint" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="base" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarPiece"/>
+        <relationship name="hairs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarPiece"/>
+        <relationship name="head" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarPiece"/>
+        <relationship name="shirt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarPiece"/>
+        <relationship name="shoes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarPiece"/>
+        <relationship name="trousers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarPiece"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="avatar" inverseEntity="User"/>
+    </entity>
+    <entity name="AvatarPiece" representedClassName=".AvatarPiece" syncable="YES">
+        <attribute name="file" optional="YES" attributeType="String"/>
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="posX" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="posY" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sizeHeight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sizeWidth" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="AvatarType" representedClassName=".AvatarType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="pieces" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AvatarPiece"/>
+    </entity>
+    <entity name="Conversation" representedClassName=".Conversation" syncable="YES">
+        <attribute name="documentPath" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="simulatedPeer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SimulatedPeer"/>
+        <relationship name="user1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+        <relationship name="user2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+    </entity>
+    <entity name="ExperimentalCondition" representedClassName=".ExperimentalCondition" syncable="YES">
+        <attribute name="acronym" optional="YES" attributeType="String"/>
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Goal" representedClassName=".Goal" syncable="YES">
+        <attribute name="attained" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="week" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterventionWeek"/>
+    </entity>
+    <entity name="InterventionWeek" representedClassName=".InterventionWeek" syncable="YES">
+        <attribute name="begin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Message" representedClassName=".Message" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="authorSimulatedPeer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SimulatedPeer"/>
+        <relationship name="authorUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+        <relationship name="conversation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Conversation"/>
+    </entity>
+    <entity name="SimulatedPeer" representedClassName=".SimulatedPeer" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="model" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SimulatedPeerModel"/>
+    </entity>
+    <entity name="SimulatedPeerModel" representedClassName=".SimulatedPeerModel" syncable="YES">
+        <attribute name="preview" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="avatar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Avatar"/>
+    </entity>
+    <entity name="StepArchive" representedClassName=".StepArchive" syncable="YES">
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="value" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="week" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterventionWeek"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="avatar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Avatar" inverseName="user" inverseEntity="Avatar"/>
+        <relationship name="experimentalConditions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExperimentalCondition"/>
+        <relationship name="simulatedPeer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SimulatedPeer"/>
+        <relationship name="stepRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StepArchive"/>
+    </entity>
+    <entity name="UserInformation" representedClassName=".UserInformation" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="refreshToken" optional="YES" attributeType="String"/>
+        <attribute name="token" optional="YES" attributeType="String"/>
+    </entity>
+</model>
